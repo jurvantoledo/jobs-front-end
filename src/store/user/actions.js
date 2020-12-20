@@ -27,11 +27,6 @@ const tokenStillValid = userWithoutToken => ({
 
 export const logOut = () => ({ type: LOG_OUT });
 
-export const userDetailsFetched = users => ({
-  type: USER_DETAILS_FETCHED,
-  payload: users
-});
-
 export const signUp = (name, email, password) => {
   return async (dispatch, getState) => {
     dispatch(appLoading());
@@ -112,27 +107,6 @@ export const getUserWithStoredToken = () => {
       // get rid of the token by logging out
       dispatch(logOut());
       dispatch(appDoneLoading());
-    }
-  };
-};
-
-export const fetchUserById = () => {
-  return async (dispatch, getState) => {
-
-    try {
-      // if we do have a token,
-      // check wether it is still valid or if it is expired
-      const response = await axios.get(`${apiUrl}/user`);
-
-      // token is still valid
-      dispatch(userDetailsFetched(response.data));
-      dispatch(appDoneLoading());
-    } catch (error) {
-      if (error.response) {
-        console.log(error.response.message);
-      } else {
-        console.log(error);
-      }
     }
   };
 };
