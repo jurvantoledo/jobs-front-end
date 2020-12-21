@@ -2,7 +2,8 @@ import React, { useEffect } from "react"
 import { 
     Jumbotron, 
     Container,
-    Card 
+    Card,
+    Col 
 } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
@@ -34,21 +35,28 @@ export default function UserInfo() {
                 )
             })}
         </Jumbotron>
-        <Container className="userInfo-body">
+        <Container as={Col} md={{ span: 12 }} className="userInfo-body">
             {userInfo.map(uInfo => {
                 return (
-                    <Card key={uInfo.id}>
+                    <Container 
+                    key={uInfo.id}
+                    as={Col} 
+                    md={{ span: 12 }} 
+                    className="info-weapon-container"
+                    >
                         {uInfo.weapons.map(weapon => {
                             return (
-                                <Card
-                                key={weapon.id} 
+                                <Card 
+                                key={weapon.id}
+                                as={Col} 
+                                md={{ span: 6 }} 
                                 className="info-image" 
                                 style={{ backgroundImage: `url(${weapon.image})` }}>
                                     <p className="info-weapon-name">{weapon.name}</p>
                                 </Card>
                             )
                         })}
-                    </Card>
+                    </Container>
                 )
             })}
         </Container>

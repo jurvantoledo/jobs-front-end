@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import axios from "axios"
 import { apiUrl } from "../../config/constants";
 import { 
@@ -6,12 +6,15 @@ import {
     Container, 
     Card, 
     Button,
+    Col
  } from "react-bootstrap"
  import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux"
 import { usersFetched } from "../../store/allUsers/actions"
 import { selectAllUsers } from "../../store/allUsers/selectors"
 import { selectUser } from "../../store/user/selectors"
+
+import "./index.scss"
  
 export default function HomePage() {
     const dispatch = useDispatch()
@@ -20,7 +23,7 @@ export default function HomePage() {
 
     useEffect(() => {
         dispatch(fetchAllUsers);
-        
+
       }, [dispatch]);
 
       async function fetchAllUsers() {
@@ -36,20 +39,29 @@ export default function HomePage() {
             }
           }
         };
-
     
     return (
     <>
-        <Jumbotron>
+      <div className="cursor"></div>
+        <Jumbotron className="hp-banner-text">
             <h1>Welcome back {user.name}</h1>
         </Jumbotron>
-        <Container>
+        <Container as={Col} md={{ span: 12 }}>
                 {allUsers.map(u => {
                     return (
-                        <Card key={u.id}>
-                            <h2>{u.name}</h2>
-                        <Link to={`/userInfo/${u.id}`} >
-                            <Button>See weapons</Button>
+                        <Card 
+                        key={u.id}
+                        as={Col} 
+                        md={{ span: 3 }}
+                        style={{ backgroundImage: `url(https://www.desktopbackground.org/p/2012/01/27/334799_download-borderlands-2-logo-wallpapers-widescreen_1600x1200_h.jpg)` }}
+                        >
+                        <h2 className="username-homepage">{u.name}</h2>
+                        <Link to={`/userInfo/${u.id}`} className="animated-button1">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                              See weapons
                             </Link>
                         </Card>
                     )

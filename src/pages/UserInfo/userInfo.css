@@ -2,3 +2,27 @@
   background-size: contain;
   height: 300px;
 }
+
+.info-weapon-container.container.col-md-12 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.info-image.card.col-md-6::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+p.info-weapon-name {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 125px 0;
+  z-index: 9;
+}
