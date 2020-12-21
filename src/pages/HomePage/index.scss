@@ -1,5 +1,6 @@
 .hp-banner-text.jumbotron {
   background-color: transparent;
+  color: #fff;
 }
 
 .container.col-md-12 {
@@ -9,6 +10,7 @@
 }
 
 .card.col-md-3 {
+  position: relative;
   margin: 0 15px;
   height: 350px;
   padding: 0;
@@ -39,7 +41,7 @@ h2.username-homepage {
   z-index: 9;
 }
 
-a:hover {
+.animated-button1 a:hover {
   color: #fff !important;
   font-weight: bold;
   padding: 20px 40px;

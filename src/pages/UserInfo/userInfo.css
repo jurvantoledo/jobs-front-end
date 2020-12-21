@@ -1,3 +1,8 @@
+.info-banner-text.jumbotron {
+  background-color: transparent;
+  color: #fff;
+}
+
 .info-image.card {
   background-size: contain;
   height: 300px;

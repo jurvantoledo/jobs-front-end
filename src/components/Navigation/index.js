@@ -8,6 +8,8 @@ import NavbarItem from "./NavbarItem";
 import LoggedIn from "./LoggedIn";
 import LoggedOut from "./LoggedOut";
 
+import "./index.scss"
+
 export default function Navigation() {
   const token = useSelector(selectToken);
 

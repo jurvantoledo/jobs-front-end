@@ -42,7 +42,6 @@ export default function HomePage() {
     
     return (
     <>
-      <div className="cursor"></div>
         <Jumbotron className="hp-banner-text">
             <h1>Welcome back {user.name}</h1>
         </Jumbotron>
@@ -50,11 +49,16 @@ export default function HomePage() {
                 {allUsers.map(u => {
                     return (
                         <Card 
+                        className="animated-button1"
                         key={u.id}
                         as={Col} 
                         md={{ span: 3 }}
                         style={{ backgroundImage: `url(https://www.desktopbackground.org/p/2012/01/27/334799_download-borderlands-2-logo-wallpapers-widescreen_1600x1200_h.jpg)` }}
                         >
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
                         <h2 className="username-homepage">{u.name}</h2>
                         <Link to={`/userInfo/${u.id}`} className="animated-button1">
                             <span></span>

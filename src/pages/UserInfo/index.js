@@ -26,7 +26,7 @@ export default function UserInfo() {
 
     return (
     <>
-        <Jumbotron>
+        <Jumbotron className="info-banner-text">
             {userInfo.map(uInfo => {
                 return (
                 <Container key={uInfo.id} className="userInfo-header">
