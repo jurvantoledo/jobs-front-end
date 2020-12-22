@@ -4,8 +4,9 @@
 }
 
 .info-image.card {
-  background-size: contain;
-  height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: transparent;
 }
 
 .info-weapon-container.container.col-md-12 {
