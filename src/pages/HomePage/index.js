@@ -43,7 +43,7 @@ export default function HomePage() {
     return (
     <>
         <Jumbotron className="hp-banner-text">
-            <h1>Welcome back {user.name}</h1>
+            <h1 className="title">Welcome back {user.name}</h1>
         </Jumbotron>
         <Container as={Col} md={{ span: 12 }}>
                 {allUsers.map(u => {

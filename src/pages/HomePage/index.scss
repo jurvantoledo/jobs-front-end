@@ -206,3 +206,25 @@ h2.username-homepage {
     transform: translateY(100%);
   }
 }
+
+//NEW ANIMATION
+.title {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  background-image: url(https://media2.giphy.com/media/553Zs1KrXN7A3H7ofT/giphy.gif?cid=ecf05e476agbtrsmxi0hibiz0bl0tpo4x3ygq35jka8hei62&rid=giphy.gif);
+  background-size: contain;
+  color: transparent;
+  background-clip: text;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+  font-size: 120px;
+  line-height: 0.75;
+  margin: 10px 0;
+}
