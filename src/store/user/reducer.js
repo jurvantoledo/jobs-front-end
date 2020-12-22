@@ -2,7 +2,8 @@ import {
   LOG_OUT, 
   LOGIN_SUCCESS, 
   TOKEN_STILL_VALID, 
-  USER_DETAILS_FETCHED
+  USER_DETAILS_FETCHED,
+  WEAPON_POST_SUCCESS
 } from "./actions";
 
 const initialState = {
@@ -37,6 +38,15 @@ export default (state = initialState, action) => {
             ...action.payload
           }
         };
+
+        case WEAPON_POST_SUCCESS:
+          return {
+            ...state,
+            weapon: {
+              ...state.weapon, 
+              ...action.payload
+            }
+          };
 
     default:
       return state;

@@ -1,6 +1,6 @@
 import { apiUrl } from "../../config/constants";
 import axios from "axios";
-import { selectToken } from "./selectors";
+import { selectToken, selectUser, selectWeapon } from "./selectors";
 import {
   appLoading,
   appDoneLoading,
@@ -106,6 +106,43 @@ export const getUserWithStoredToken = () => {
       // if we get a 4xx or 5xx response,
       // get rid of the token by logging out
       dispatch(logOut());
+      dispatch(appDoneLoading());
+    }
+  };
+};
+
+export const WEAPON_POST_SUCCESS = "WEAPON_POST_SUCCESS";
+
+export const weaponPostSuccess = weapon => ({
+  type: WEAPON_POST_SUCCESS,
+  payload: weapon
+});
+
+
+export const addWeapon = (name, type, rarity) => {
+  return async (dispatch, getState) => {
+    const { user } = selectWeapon(getState());
+    console.log(user)
+    dispatch(appLoading());
+    try {
+      const response = await axios.post(
+        `${apiUrl}/user/${user.id}`, {
+          name, 
+          type, 
+          rarity
+      });
+
+      dispatch(weaponPostSuccess(response.data));
+      dispatch(showMessageWithTimeout("success", true, "weapon created"));
+      dispatch(appDoneLoading());
+    } catch (error) {
+      if (error.response) {
+        console.log(error.response.data.message);
+        dispatch(setMessage("danger", true, error.response.data.message));
+      } else {
+        console.log(error.message);
+        dispatch(setMessage("danger", true, error.message));
+      }
       dispatch(appDoneLoading());
     }
   };

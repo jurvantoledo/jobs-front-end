@@ -1,27 +1,21 @@
-.hp-banner-text.jumbotron {
+.info-banner-text.jumbotron {
   background-color: transparent;
   color: #fff;
-  text-shadow: 0px 0px 3px white;
-  text-align: center;
 }
 
-.container.col-md-12 {
+.info-image.card {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  position: relative;
+}
+
+.info-weapon-container.container.col-md-12 {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
-.card.col-md-3 {
-  position: relative;
-  margin: 0 15px;
-  height: 350px;
-  padding: 0;
-  background-size: cover;
-  background-position: center;
-  border: none;
-}
-
-.card.col-md-3::after {
+.info-image.card.col-md-6::after {
   content: "";
   position: absolute;
   top: 0;
@@ -31,20 +25,34 @@
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-.card.col-md-3:hover {
-  box-shadow: 0px 5px 20px 5px rgba(255, 51, 51, 0.5);
-  transition: 0.5s;
+h2.info-weapon-name-header {
+  color: #fff;
+  font-weight: bold;
+  z-index: 9;
+  text-align: center;
+  padding-top: 50px;
 }
 
-h2.username-homepage {
-  text-align: center;
-  padding-top: 140px;
+p.info-weapon-name {
   color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
   z-index: 9;
 }
 
+p.rarity-color {
+  border-radius: 50%;
+  padding: 1px;
+  width: 3%;
+  color: transparent;
+  position: absolute;
+  bottom: 0;
+  right: 15px;
+}
+
 //ANIMATED BUTTON
-.animated-button1 a:hover {
+a.animated-button2:hover {
   color: #fff !important;
   font-weight: bold;
   padding: 20px 40px;
@@ -54,7 +62,7 @@ h2.username-homepage {
   transition: 0.5s;
 }
 
-.animated-button1 {
+.animated-button2 {
   background: linear-gradient(-30deg, #3d0b0b 50%, #2b0808 50%);
   padding: 15px 30px;
   margin: 12px;
@@ -69,12 +77,11 @@ h2.username-homepage {
   text-decoration: none;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   z-index: 9;
-  position: absolute;
-  bottom: 0;
-  left: 105px;
+  position: relative;
+  left: 20px;
 }
 
-.animated-button1::before {
+.animated-button2::before {
   content: "";
   position: absolute;
   top: 0px;
@@ -87,15 +94,15 @@ h2.username-homepage {
   transition: 0.2s opacity ease-in-out;
 }
 
-.animated-button1:hover::before {
+.animated-button2:hover::before {
   opacity: 0.2;
 }
 
-.animated-button1 span {
+.animated-button2 span {
   position: absolute;
 }
 
-.animated-button1 span:nth-child(1) {
+.animated-button2 span:nth-child(1) {
   top: 0px;
   left: 0px;
   width: 100%;
@@ -123,7 +130,7 @@ h2.username-homepage {
   }
 }
 
-.animated-button1 span:nth-child(2) {
+.animated-button2 span:nth-child(2) {
   top: 0px;
   right: 0px;
   height: 100%;
@@ -151,7 +158,7 @@ h2.username-homepage {
   }
 }
 
-.animated-button1 span:nth-child(3) {
+.animated-button2 span:nth-child(3) {
   bottom: 0px;
   left: 0px;
   width: 100%;
@@ -179,7 +186,7 @@ h2.username-homepage {
   }
 }
 
-.animated-button1 span:nth-child(4) {
+.animated-button2 span:nth-child(4) {
   top: 0px;
   left: 0px;
   height: 100%;

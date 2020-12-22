@@ -9,6 +9,7 @@ import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import HomePage from "./pages/HomePage"
 import UserInfo from "./pages/UserInfo"
+import AddWeapon from "./pages/AddWeapon"
 
 import { useDispatch, useSelector } from "react-redux";
 import { selectAppLoading } from "./store/appState/selectors";
@@ -42,6 +43,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/userInfo/:id" component={UserInfo} />
+        <Route path="/add-weapon/:id" component={AddWeapon} />
         <Route path="/signup" component={SignUp} />
         <Route path="/login" component={Login} />
       </Switch>

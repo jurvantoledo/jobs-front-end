@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react"
 import { Form } from "react-bootstrap"
+import { Link } from "react-router-dom"
 import { 
     Jumbotron, 
     Container,
     Card,
-    Col 
+    Col,
+    Button 
 } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
 import { fetchUserById } from "../../store/userInfo/actions"
 import { selectUserInfo } from "../../store/userInfo/selectors"
 
-import "./userInfo.css"
+import "./userInfo.scss"
 
 
 export default function UserInfo() {
@@ -44,6 +46,13 @@ export default function UserInfo() {
                 )
             })}
         </Jumbotron>
+        <Link className="animated-button2" to={`/add-weapon/${id}`}>
+           <span></span>
+           <span></span>
+           <span></span>
+           <span></span>
+           Add A Weapon
+        </Link>
         <Container as={Col} md={{ span: 12 }} className="userInfo-body">
             {userInfo.map(uInfo => {
                 return (
@@ -58,10 +67,18 @@ export default function UserInfo() {
                                 <Card 
                                 key={weapon.id}
                                 as={Col} 
-                                md={{ span: 6 }} 
+                                md={{ span: 12 }} 
                                 className="info-image" 
                                 style={{ backgroundImage: `url(https://www.wallpaperup.com/uploads/wallpapers/2014/01/22/234882/8507fe0a3d30363c8712c0b93e14db41.jpg)` }}>
-                                    <p className="info-weapon-name">{weapon.name}</p>
+                                    <h2 className="info-weapon-name-header">{weapon.name}</h2>
+                                    <p className="info-weapon-name">{weapon.type}</p>
+                                    { weapon.rarity === "#ffffff" ?( <p className="rarity-color" style={{backgroundColor: "#ffffff"}}>{weapon.rarity}</p> ) 
+                                    : weapon.rarity === "#27d827" ? ( <p className="rarity-color" style={{backgroundColor: "#27d827"}}>{weapon.rarity}</p> ) 
+                                    : weapon.rarity === "#1919ff" ? ( <p className="rarity-color" style={{backgroundColor: "#1919ff"}}>{weapon.rarity}</p> ) 
+                                    : weapon.rarity === "#800080" ? ( <p className="rarity-color" style={{backgroundColor: "#800080"}}>{weapon.rarity}</p> ) 
+                                    : weapon.rarity === "#FFA500" ? ( <p className="rarity-color" style={{backgroundColor: "#FFA500"}}>{weapon.rarity}</p> ) 
+                                    : weapon.rarity === "#FF1493" ? ( <p className="rarity-color" style={{backgroundColor: "#FF1493"}}>{weapon.rarity}</p> ) 
+                                    : weapon.rarity === "#00FFFF" ? ( <p className="rarity-color" style={{backgroundColor: "#00FFFF"}}>{weapon.rarity}</p> ) : null}
                         <Form>
                         <Form.Group controlId="formIsOwner">
                             <Form.Check
