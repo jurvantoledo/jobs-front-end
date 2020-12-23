@@ -10,7 +10,6 @@ const initialState = {
   token: localStorage.getItem("token"),
   name: null,
   email: null,
-  weapons: []
 };
 
 export default (state = initialState, action) => {
@@ -27,17 +26,7 @@ export default (state = initialState, action) => {
       return { 
         ...state, 
         ...action.payload, 
-        weapons: {...action.payload} 
     };
-
-      case USER_DETAILS_FETCHED:
-        return {
-          ...state,
-          weapons: {
-            ...state, 
-            ...action.payload
-          }
-        };
 
         case WEAPON_POST_SUCCESS:
           return {

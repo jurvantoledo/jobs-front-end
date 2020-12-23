@@ -2,7 +2,7 @@ import {
     USER_DETAILS_FETCHED,
   } from "./actions";
   
-  const initialState = [];
+  const initialState = []
   
   export default (state = initialState, { type, payload }) => {
     switch (type) {  
@@ -10,8 +10,10 @@ import {
       let index = state.findIndex(u => u.u_id === payload.u_id);
   
       if(index === -1)
-        return [...state, {...payload}];
-  
+        return [
+          ...state, 
+          {...payload}
+        ];
   
       default:
         return state;

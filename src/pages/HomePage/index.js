@@ -60,7 +60,7 @@ export default function HomePage() {
                           <span></span>
                           <span></span>
                         <h2 className="username-homepage">{u.name}</h2>
-                        <Link to={`/userInfo/${u.id}`} className="animated-button1">
+                        <Link to={`/user-info/${u.id}`} className="animated-button1">
                             <span></span>
                             <span></span>
                             <span></span>
