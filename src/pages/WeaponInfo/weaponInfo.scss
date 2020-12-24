@@ -20,7 +20,7 @@ p.element-name {
 }
 
 .element-card.card.col-md-3 {
-  background-size: 100% 100%;
+  background-size: cover !important;
   animation: gradient 15s ease infinite;
 }
 
