@@ -57,7 +57,7 @@ export default function WeaponInfo() {
                 : e.name === "Corrosive" ? {background: "url(https://ak.picdn.net/shutterstock/videos/3059452/thumb/1.jpg)"} : 
                 e.name === "Shock" ? {background: "url(https://d.newsweek.com/en/full/1517575/lightning.jpg)"} : 
                 e.name === "Explosive" ? {background: "url(https://catholicstrengthblog.files.wordpress.com/2016/01/explosion-562853_1280-1.jpg)"} : 
-                e.name === "Slag" ? {backgroundImage: "url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8766adfb-3123-4e30-8cbc-91a3f73ee225/d83vtcc-dbbdd675-2f79-487d-bb6c-1b72b06df533.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvODc2NmFkZmItMzEyMy00ZTMwLThjYmMtOTFhM2Y3M2VlMjI1XC9kODN2dGNjLWRiYmRkNjc1LTJmNzktNDg3ZC1iYjZjLTFiNzJiMDZkZjUzMy5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.lcJIUvvlE5kX-SB39Qo-wUP8aykqEp5B9QAoEEjncBI"} : null}
+                e.name === "Slag" ? {background: "url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8766adfb-3123-4e30-8cbc-91a3f73ee225/d83vtcc-dbbdd675-2f79-487d-bb6c-1b72b06df533.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvODc2NmFkZmItMzEyMy00ZTMwLThjYmMtOTFhM2Y3M2VlMjI1XC9kODN2dGNjLWRiYmRkNjc1LTJmNzktNDg3ZC1iYjZjLTFiNzJiMDZkZjUzMy5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.lcJIUvvlE5kX-SB39Qo-wUP8aykqEp5B9QAoEEjncBI"} : null}
                 >
                     <p className="element-name">{e.name}</p>                    
                     { displayButton ? 
