@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react"
-import { Card, Jumbotron, Button } from "react-bootstrap";
+import { 
+    Card, 
+    Jumbotron,
+    Container,
+    Col, 
+    Button 
+} from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { deleteElement, fetchWeaponById } from "../../store/weapons/actions";
@@ -7,12 +13,12 @@ import { selectWeapons } from "../../store/weapons/selectors";
 import ElementForm from "../../components/ElementForm/index"
 import { selectUserInfo } from "../../store/userInfo/selectors";
 import { selectUser } from "../../store/user/selectors";
+import "./weaponInfo.scss"
 
 
 export default function WeaponInfo() {
     const { id } = useParams()
     const user = useSelector(selectUser)
-    const userInfo = useSelector(selectUserInfo)
     const dispatch = useDispatch()
     const weapon = useSelector(selectWeapons)
     const [editForm, setEditForm] = useState(false);
@@ -39,23 +45,28 @@ export default function WeaponInfo() {
             >
                 {weapon.name}
             </h1>
-        <div>
+        <Container className="element-container">
             {weapon.elements?.map(e => {
                 return (
-                <Card key={e.id}>
-                    <p>{e.name}</p>
+                <Card 
+                key={e.id}
+                as={Col} 
+                md={{ span: 3 }}
+                className="element-card"
+                >
+                    <p className="element-name">{e.name}</p>
                     { displayButton ? 
                     <Button
-                    className="delete-button" 
-                    variant="danger"
+                    className="remove-button" 
+                    data-text="Remove"
                     onClick={() => dispatch(deleteElement(e.id))}
                     >
-                        Remove
+                        <span>Remove</span>
                     </Button> : null}
                 </Card>
                 )
             })}
-        </div>
+        </Container>
         <div className="add-element-form-container">
           {displayButton ? 
           <Button
