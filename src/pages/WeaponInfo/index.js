@@ -4,12 +4,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchWeaponById } from "../../store/weapons/actions";
 import { selectWeapons } from "../../store/weapons/selectors";
+import ElementForm from "../../components/ElementForm/index"
+import { selectUserInfo } from "../../store/userInfo/selectors";
+import { selectUser } from "../../store/user/selectors";
 
 
 export default function WeaponInfo() {
     const { id } = useParams()
+    const user = useSelector(selectUser)
+    const userInfo = useSelector(selectUserInfo)
     const dispatch = useDispatch()
     const weapon = useSelector(selectWeapons)
+    const [editForm, setEditForm] = useState(false);
     
     console.log(weapon)
 
@@ -20,21 +26,35 @@ export default function WeaponInfo() {
 
     return (
     <>
-        <Jumbotron
+     <Jumbotron
          style={{ backgroundImage: `url(https://www.wallpaperup.com/uploads/wallpapers/2014/01/22/234882/8507fe0a3d30363c8712c0b93e14db41.jpg)`}}>
             <h1
              style={{borderBottom: `2px solid ${weapon.rarity}`}}
+             key={weapon.id}
             >
                 {weapon.name}
             </h1>
-        </Jumbotron>
-        <Card>
+        <div>
             {weapon.elements?.map(e => {
                 return (
-                    <Button>{e.name}</Button>
+                <Card key={e.id}>
+                    <p>{e.name}</p>
+                </Card>
                 )
             })}
-        </Card>
+        </div>
+        <div className="add-element-form-container">
+          {userInfo.id === user.id ? 
+          <Button
+            className="animated-button2"
+            onClick={(e) => (editForm ? setEditForm(false) : setEditForm(true))}
+        >
+            <span></span>
+            Select a new Element
+        </Button> : null}
+        {editForm ? (<ElementForm />) : null}
+        </div>
+     </Jumbotron>
     </>
     )
 }
