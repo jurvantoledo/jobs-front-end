@@ -125,7 +125,7 @@ export default function AddWeapon() {
             Add Weapon
           </Button>
         </Form.Group>
-        <Link to={`/userInfo/${userInfo.map(uInfo => uInfo.id)}`}>
+        <Link to={`/user-info/${userInfo.map(uInfo => uInfo.id)}`}>
             <strong>Click here to go back to your armory</strong>
         </Link>
         </Form>
