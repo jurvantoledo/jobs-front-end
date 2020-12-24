@@ -11,8 +11,8 @@ import { useParams } from "react-router-dom";
 import { deleteElement, fetchWeaponById } from "../../store/weapons/actions";
 import { selectWeapons } from "../../store/weapons/selectors";
 import ElementForm from "../../components/ElementForm/index"
-import { selectUserInfo } from "../../store/userInfo/selectors";
 import { selectUser } from "../../store/user/selectors";
+
 import "./weaponInfo.scss"
 
 
