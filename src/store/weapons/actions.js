@@ -6,10 +6,13 @@ import {
   showMessageWithTimeout,
   setMessage
 } from "../appState/actions";
+import { getUserWithStoredToken } from "../user/actions";
+import { selectToken } from "../user/selectors";
 import { selectWeapons } from "./selectors";
 
 export const WEAPONS_FETCHED = "WEAPONS_FETCHED"
 export const ELEMENT_POST_SUCCESS = "ELEMENT_POST_SUCCESS";
+export const ELEMENT_DELETE_SUCCESS = "ELEMENT_DELETE_SUCCESS";
 
 const weaponFetched = weapon => ({
     type: WEAPONS_FETCHED,
@@ -19,6 +22,11 @@ const weaponFetched = weapon => ({
   export const elementPostSuccess = weapon => ({
     type: ELEMENT_POST_SUCCESS,
     payload: weapon
+  });
+
+  export const elementDeleteSuccess = weaponId => ({
+    type: ELEMENT_DELETE_SUCCESS,
+    payload: weaponId
   });
 
   
@@ -53,6 +61,27 @@ const weaponFetched = weapon => ({
           dispatch(setMessage("danger", true, error.message));
         }
         dispatch(appDoneLoading());
+      }
+    };
+  };
+
+  export const deleteElement = (id) => {
+    return async (dispatch, getState) => {
+      const token = selectToken(getState());
+  
+      if (token === null) return;
+      try {
+        const response = await axios.delete(`${apiUrl}/element/${id}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        console.log("this is response", response);
+        dispatch(getUserWithStoredToken());
+      } catch (error) {
+        if (error.response) {
+          console.log(error.response.message);
+        } else {
+          console.log(error);
+        }
       }
     };
   };

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { Card, Jumbotron, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { fetchWeaponById } from "../../store/weapons/actions";
+import { deleteElement, fetchWeaponById } from "../../store/weapons/actions";
 import { selectWeapons } from "../../store/weapons/selectors";
 import ElementForm from "../../components/ElementForm/index"
 import { selectUserInfo } from "../../store/userInfo/selectors";
@@ -17,12 +17,17 @@ export default function WeaponInfo() {
     const weapon = useSelector(selectWeapons)
     const [editForm, setEditForm] = useState(false);
     
-    console.log(weapon)
+    const displayButton = user.id === weapon.userId
 
     useEffect(() => {
         dispatch(fetchWeaponById(id));
 
       }, [dispatch, id]);
+
+      const onDelete = id => {
+        console.log("deleting element!", id);
+        dispatch(deleteElement(id));
+      };
 
     return (
     <>
@@ -39,12 +44,20 @@ export default function WeaponInfo() {
                 return (
                 <Card key={e.id}>
                     <p>{e.name}</p>
+                    { displayButton ? 
+                    <Button
+                    className="delete-button" 
+                    variant="danger"
+                    onClick={() => dispatch(deleteElement(e.id))}
+                    >
+                        Remove
+                    </Button> : null}
                 </Card>
                 )
             })}
         </div>
         <div className="add-element-form-container">
-          {userInfo.id === user.id ? 
+          {displayButton ? 
           <Button
             className="animated-button2"
             onClick={(e) => (editForm ? setEditForm(false) : setEditForm(true))}
