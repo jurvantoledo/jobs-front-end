@@ -46,6 +46,7 @@ export default function ElementForm() {
                  type="text"
                  required
                 >
+                 <option value={null}>Select an Element</option>
                  <option value="Incendiary">Incendiary</option>
                  <option value="Corrosive">Corrosive</option>
                  <option value="Shock">Shock</option>
