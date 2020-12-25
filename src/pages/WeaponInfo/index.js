@@ -37,8 +37,12 @@ export default function WeaponInfo() {
 
     return (
     <>
-     <Jumbotron
-         style={{ backgroundImage: `url(https://www.wallpaperup.com/uploads/wallpapers/2014/01/22/234882/8507fe0a3d30363c8712c0b93e14db41.jpg)`}}>
+           <Jumbotron
+            className="wrap"
+            style={{ 
+             background: `transparent`}}
+            >
+            <div className="c"></div>
             <h1
              style={{borderBottom: `2px solid ${weapon.rarity}`}}
              key={weapon.id}

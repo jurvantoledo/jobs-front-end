@@ -38,8 +38,12 @@ function App() {
 
   return (
     <div className="App">
+      <div className="background-container"></div>
+<div className="stars"></div>
+<div className="twinkling"></div>
+<div className="clouds"></div>
       <Navigation />
-      <MessageBox />
+      <MessageBox /> 
       {isLoading ? <Loading /> : null}
       <Switch>
         <Route exact path="/" component={HomePage} />
