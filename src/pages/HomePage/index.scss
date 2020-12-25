@@ -229,3 +229,18 @@ h1 {
   line-height: 0.75;
   margin: 10px 0;
 }
+
+@media (max-width: 1300px) {
+  .card.col-md-3 {
+    height: 300px;
+  }
+
+  //ANIMATED BUTTON
+  .animated-button1 {
+    margin: 50px auto 15px;
+  }
+
+  a.animated-button1 {
+    font-size: 1rem;
+  }
+}
