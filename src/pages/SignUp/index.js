@@ -71,11 +71,25 @@ export default function SignUp() {
           />
         </Form.Group>
         <Form.Group className="mt-5">
-          <Button variant="primary" type="submit" onClick={submitForm}>
+          <Button 
+          className="login-btn"
+          variant="primary" 
+          type="submit" 
+          onClick={submitForm}
+          >
             Sign up
           </Button>
         </Form.Group>
-        <Link to="/login">Click here to log in</Link>
+        <Link 
+        className="signup"
+        to="/login"
+        >
+          Click here to log in
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        </Link>
       </Form>
     </Container>
   );

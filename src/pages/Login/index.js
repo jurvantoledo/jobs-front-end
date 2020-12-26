@@ -7,6 +7,7 @@ import { selectToken, selectUser } from "../../store/user/selectors";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, Link } from "react-router-dom";
 import { Col } from "react-bootstrap";
+import "./index.scss"
 
 export default function SignUp() {
   const { id } = useSelector(selectUser)
@@ -61,12 +62,25 @@ export default function SignUp() {
           />
         </Form.Group>
         <Form.Group className="mt-5">
-          <Button variant="primary" type="submit" onClick={submitForm}>
+          <Button 
+          className="login-btn"
+          variant="primary" 
+          type="submit" 
+          onClick={submitForm}
+          >
             Log in
           </Button>
         </Form.Group>
-        <Link to="/signup" style={{ textAlign: "center" }}>
+        <Link 
+        className="signup"
+        to="/signup" 
+        style={{ textAlign: "center" }}
+        >
           Click here to sign up
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
         </Link>
       </Form>
     </Container>

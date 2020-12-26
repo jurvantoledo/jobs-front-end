@@ -42,13 +42,17 @@ export default function WeaponInfo() {
             style={{ 
              background: `transparent`}}
             >
-            <div className="c"></div>
             <h1
             className="weapon-info-title"
-             style={{borderBottom: `2px solid ${weapon.rarity}`}}
              key={weapon.id}
             >
                 {weapon.name}
+                <span
+            className="title-border"
+                style={{
+                    background: `linear-gradient(to right, rgba(43, 8, 8, 0), ${weapon.rarity})`,
+                }}
+            ></span>
             </h1>
         <Container className="element-container">
             {weapon.elements?.map(e => {

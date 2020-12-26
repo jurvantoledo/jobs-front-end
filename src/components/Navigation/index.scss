@@ -23,7 +23,7 @@ a.nav-link {
   font-weight: bold;
 }
 
-// LOGOUT BUTTON RING EFFECT
+// LOGOUT BUTTON
 button.logOut-btn.btn.btn-primary {
   background: linear-gradient(-30deg, #3d0b0b 50%, #2b0808 50%);
   border: none;
@@ -31,20 +31,7 @@ button.logOut-btn.btn.btn-primary {
   position: relative;
 }
 
-@keyframes ring {
-  0% {
-    width: 30px;
-    height: 30px;
-    opacity: 1;
-  }
-  100% {
-    width: 300px;
-    height: 300px;
-    opacity: 0;
-  }
-}
-
-//LOGIN NAV ITEM
+//LOGIN NAV ITEM RING EFFECT
 .nav-item {
   text-shadow: 0px 0px 6px white;
 }
@@ -65,4 +52,17 @@ button.logOut-btn.btn.btn-primary {
   left: 50%;
   transform: translate(-50%, -50%);
   animation: ring 1.5s infinite;
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
 }

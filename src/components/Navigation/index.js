@@ -18,8 +18,11 @@ export default function Navigation() {
   return (
     <Navbar bg="light" expand="lg">
       <span className="navbar-border"></span>
-      <Navbar.Brand as={NavLink} to="/">
-        YOUR PROJECT NAME
+      <Navbar.Brand 
+      classname="Brand name"
+      as={NavLink} 
+      to="/"
+      >
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">

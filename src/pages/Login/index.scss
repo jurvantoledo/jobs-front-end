@@ -1,97 +1,55 @@
-.hp-banner-text.jumbotron {
-  background-color: transparent;
-  color: #fff;
-  text-shadow: 0px 0px 5px white;
-  text-align: center;
-}
-
-.container.col-md-12 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.card.col-md-3 {
-  position: relative;
-  left: 0;
-  margin: 0 15px;
-  height: 350px;
-  padding: 0;
-  background-size: cover;
-  background-position: center;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.card.col-md-3::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.card.col-md-3:hover {
-  box-shadow: 0px 5px 20px 5px rgba(255, 255, 255, 0.5);
-  transition: 0.5s;
-}
-
-h2.username-homepage {
-  color: #fff;
-  flex: auto;
-  z-index: 9;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-}
-
-//ANIMATED BUTTON
-a.animated-button1:hover {
-  color: #fff !important;
+//+++++++++BRAND NAME++++++++++
+.navbar-light .navbar-brand {
+  color: rgba(255, 255, 255, 0.4) !important;
   font-weight: bold;
-  padding: 20px 40px;
-  text-decoration: none !important;
-  box-shadow: 0px 5px 20px 5px rgba(255, 51, 51, 0.5);
-  text-shadow: 0px 0px 6px white;
-  transition: 0.5s;
 }
 
-.animated-button1 a:hover {
-  color: #fff !important;
-  font-weight: bold;
-  padding: 20px 40px;
-  text-decoration: none !important;
-  box-shadow: 0px 5px 20px 5px rgba(255, 51, 51, 0.5);
+//++++++Sign up login h1+++++++
+h1.mt-5.mb-5 {
   text-shadow: 0px 0px 6px white;
-  transition: 0.5s;
 }
 
-.animated-button1 {
+//+++++LOGIN BUTTON+++++++
+button.login-btn.btn.btn-primary {
   background: linear-gradient(-30deg, #3d0b0b 50%, #2b0808 50%);
-  padding: 15px 30px;
+  border: none;
+  position: relative;
+  transition: 0.5s;
+  font-size: 1.2rem;
+}
+
+button.login-btn.btn.btn-primary:hover {
+  box-shadow: 0px 0px 30px 0px white;
+  text-shadow: 0px 0px 6px white;
+}
+
+//+++++++SIGN UP ANIMATED BUTTON+++++++++
+a.signup:hover {
+  color: #fff !important;
+  font-weight: bold;
+  padding: 15px 20px;
+  text-decoration: none !important;
+  box-shadow: 0px 5px 20px 5px rgba(255, 255, 255, 0.3);
+  text-shadow: 0px 0px 6px white;
+  transition: 0.5s;
+}
+
+.signup {
+  background: linear-gradient(-30deg, #3d0b0b 50%, #2b0808 50%);
+  padding: 15px 10px;
   display: inline-block;
   transform: translate(0%, 0%);
   overflow: hidden;
   color: #f7d4d4;
-  font-size: 20px;
-  letter-spacing: 2.5px;
-  text-align: center;
+  font-size: 14px;
   text-transform: uppercase;
   text-decoration: none;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   z-index: 9;
   position: relative;
-  bottom: 0;
-  width: 75%;
-  margin: 0px auto 15px;
 }
 
-.animated-button1::before {
+.signup::before {
   content: "";
   position: absolute;
   top: 0px;
@@ -104,15 +62,15 @@ a.animated-button1:hover {
   transition: 0.2s opacity ease-in-out;
 }
 
-.animated-button1:hover::before {
+.signup:hover::before {
   opacity: 0.2;
 }
 
-.animated-button1 span {
+.signup span {
   position: absolute;
 }
 
-.animated-button1 span:nth-child(1) {
+.signup span:nth-child(1) {
   top: 0px;
   left: 0px;
   width: 100%;
@@ -140,7 +98,7 @@ a.animated-button1:hover {
   }
 }
 
-.animated-button1 span:nth-child(2) {
+.signup span:nth-child(2) {
   top: 0px;
   right: 0px;
   height: 100%;
@@ -168,7 +126,7 @@ a.animated-button1:hover {
   }
 }
 
-.animated-button1 span:nth-child(3) {
+.signup span:nth-child(3) {
   bottom: 0px;
   left: 0px;
   width: 100%;
@@ -196,7 +154,7 @@ a.animated-button1:hover {
   }
 }
 
-.animated-button1 span:nth-child(4) {
+.signup span:nth-child(4) {
   top: 0px;
   left: 0px;
   height: 100%;
@@ -221,38 +179,5 @@ a.animated-button1:hover {
   100% {
     -webkit-transform: translateY(100%);
     transform: translateY(100%);
-  }
-}
-
-//NEW ANIMATION
-.title {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-h1 {
-  background-image: url(https://media2.giphy.com/media/553Zs1KrXN7A3H7ofT/giphy.gif?cid=ecf05e476agbtrsmxi0hibiz0bl0tpo4x3ygq35jka8hei62&rid=giphy.gif);
-  background-size: contain;
-  color: transparent;
-  background-clip: text;
-  -moz-background-clip: text;
-  -webkit-background-clip: text;
-  text-transform: uppercase;
-  font-size: 120px;
-  line-height: 0.75;
-  margin: 10px 0;
-}
-
-@media (max-width: 1300px) {
-  .card.col-md-3 {
-    height: 300px;
-  }
-
-  //ANIMATED BUTTON
-  a.animated-button1 {
-    font-size: 1rem;
   }
 }

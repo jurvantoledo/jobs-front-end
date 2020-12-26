@@ -18,6 +18,7 @@
 h1.weapon-info-title {
   text-shadow: 0px 0px 5px white;
   text-align: center;
+  position: relative;
 }
 
 p.element-name {
@@ -29,4 +30,28 @@ p.element-name {
   animation: gradient 15s ease infinite;
 }
 
-//IMAGE BACKGROUND EFFECT
+//BORDER EFFECT
+
+span.title-border {
+  position: absolute;
+}
+
+span.title-border {
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  animation: 2s animateBottom linear infinite;
+  position: absolute;
+}
+
+@keyframes animateBottom {
+  0% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+}

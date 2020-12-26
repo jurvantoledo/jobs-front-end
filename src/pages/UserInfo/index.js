@@ -78,6 +78,7 @@ export default function UserInfo() {
                             >
                             { displayButton ? 
                             <Button
+                            id="remove"
                             className="remove-button" 
                             data-text="Remove"
                                   onClick={() => dispatch(deleteWeapon(weapon.id))}
