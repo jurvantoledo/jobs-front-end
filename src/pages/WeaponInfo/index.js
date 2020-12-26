@@ -38,9 +38,10 @@ export default function WeaponInfo() {
     return (
     <>
            <Jumbotron
-            className="wrap"
+            className="weapon-info"
             style={{ 
-             background: `transparent`}}
+             background: `transparent`,
+            backgroundImage: "url(https://www.wallpaperup.com/uploads/wallpapers/2014/01/22/234882/8507fe0a3d30363c8712c0b93e14db41.jpg)"}}
             >
             <h1
             className="weapon-info-title"
@@ -62,16 +63,15 @@ export default function WeaponInfo() {
                 as={Col} 
                 md={{ span: 3 }}
                 className="element-card"
-                style={e.name === "Incendiary" ? {background: "url(https://media.krem.com/assets/KREM/images/467115771/467115771_750x422.jpg)"} 
-                : e.name === "Corrosive" ? {background: "url(https://ak.picdn.net/shutterstock/videos/3059452/thumb/1.jpg)"} : 
-                e.name === "Shock" ? {background: "url(https://d.newsweek.com/en/full/1517575/lightning.jpg)"} : 
-                e.name === "Explosive" ? {background: "url(https://catholicstrengthblog.files.wordpress.com/2016/01/explosion-562853_1280-1.jpg)"} : 
-                e.name === "Slag" ? {background: "url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8766adfb-3123-4e30-8cbc-91a3f73ee225/d83vtcc-dbbdd675-2f79-487d-bb6c-1b72b06df533.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvODc2NmFkZmItMzEyMy00ZTMwLThjYmMtOTFhM2Y3M2VlMjI1XC9kODN2dGNjLWRiYmRkNjc1LTJmNzktNDg3ZC1iYjZjLTFiNzJiMDZkZjUzMy5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.lcJIUvvlE5kX-SB39Qo-wUP8aykqEp5B9QAoEEjncBI"} : null}
+                style={e.name === "Incendiary" ? {background: "url(https://cdn.discordapp.com/attachments/662042818856091658/792387056210149376/Fire.png)"} :
+                e.name === "Corrosive" ? {background: "url(https://cdn.discordapp.com/attachments/662042818856091658/792387806706008074/Corrosive.png)"} : 
+                e.name === "Shock" ? {background: "url(https://cdn.discordapp.com/attachments/662042818856091658/792388395325194240/Shock.png)"} : 
+                e.name === "Explosive" ? {background: "url(https://cdn.discordapp.com/attachments/662042818856091658/792388214501015593/Explosive.png)"} : 
+                e.name === "Slag" ? {background: "url(https://cdn.discordapp.com/attachments/662042818856091658/792387449187205121/Slag_1.png"} : null}
                 >
-                    <p className="element-name">{e.name}</p>                    
                     { displayButton ? 
                     <Button
-                    className="remove-button" 
+                    className="element-remove-button" 
                     data-text="Remove"
                     onClick={() => dispatch(deleteElement(e.id))}
                     >
