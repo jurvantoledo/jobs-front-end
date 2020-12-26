@@ -1,6 +1,7 @@
 .info-banner-text.jumbotron {
   background-color: transparent;
   color: #fff;
+  text-shadow: 0px 0px 5px white;
 }
 
 .info-image.card {
@@ -8,6 +9,7 @@
   background-repeat: no-repeat;
   background-color: transparent;
   position: relative;
+  height: 300px;
 }
 
 .info-weapon-container.container.col-md-12 {

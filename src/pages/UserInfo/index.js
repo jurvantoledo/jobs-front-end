@@ -45,7 +45,7 @@ export default function UserInfo() {
             {userInfo.map(uInfo => {
                 return (
                 <Container key={uInfo.id} className="userInfo-header">
-                    <h2>Welcome to your arsenal {uInfo.name}</h2>
+                    <h1 className="title">Welcome to your arsenal {uInfo.name}</h1>
                 </Container>
                 )
             })}
@@ -84,8 +84,10 @@ export default function UserInfo() {
                             >
                                        <span>Remove</span>
                             </Button> : null}
+                                <div className="weapon-info-name">
                                     <h2 className="info-weapon-name-header">{weapon.name}</h2>
                                     <p className="info-weapon-name">{weapon.type}</p>
+                                </div>
                                 <Link to={`/weapon-info/${weapon.id}`} className="animated-button1">
                                     <span></span>
                                     <span></span>

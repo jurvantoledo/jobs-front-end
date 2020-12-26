@@ -44,6 +44,7 @@ export default function WeaponInfo() {
             >
             <div className="c"></div>
             <h1
+            className="weapon-info-title"
              style={{borderBottom: `2px solid ${weapon.rarity}`}}
              key={weapon.id}
             >
