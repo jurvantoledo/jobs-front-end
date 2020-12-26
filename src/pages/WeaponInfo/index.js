@@ -43,17 +43,35 @@ export default function WeaponInfo() {
              background: `transparent`,
             backgroundImage: "url(https://www.wallpaperup.com/uploads/wallpapers/2014/01/22/234882/8507fe0a3d30363c8712c0b93e14db41.jpg)"}}
             >
+                <span
+                  style={{
+                    background: `-webkit-gradient(linear, linear, right top, left top, from(rgba(43, 8, 8, 0)), to(${weapon.rarity}))`,
+                    background: `linear-gradient(to left, rgba(43, 8, 8, 0), ${weapon.rarity})`,
+                  }}
+                ></span>
+                <span
+                  style={{
+                    background: `-webkit-gradient(linear, left bottom, left top, from(rgba(43, 8, 8, 0)), to(${weapon.rarity}))`,
+                    background: `linear-gradient(to top, rgba(43, 8, 8, 0), ${weapon.rarity})`,
+                  }}
+                ></span>
+                <span
+                   style={{
+                    background: `-webkit-gradient(linear, linear, left top, right top, from(rgba(43, 8, 8, 0)), to(${weapon.rarity}))`,
+                    background: `linear-gradient(to right, rgba(43, 8, 8, 0), ${weapon.rarity})`,
+                  }}
+                ></span>
+                <span
+                   style={{
+                    background: `-webkit-gradient(linear, linear, left top, left bottom, from(rgba(43, 8, 8, 0)), to(${weapon.rarity}))`,
+                    background: `linear-gradient(to bottom, rgba(43, 8, 8, 0), ${weapon.rarity})`,
+                  }}
+                ></span>
             <h1
             className="weapon-info-title"
              key={weapon.id}
             >
                 {weapon.name}
-                <span
-            className="title-border"
-                style={{
-                    background: `linear-gradient(to right, rgba(43, 8, 8, 0), ${weapon.rarity})`,
-                }}
-            ></span>
             </h1>
         <Container className="element-container">
             {weapon.elements?.map(e => {
@@ -75,7 +93,7 @@ export default function WeaponInfo() {
                     data-text="Remove"
                     onClick={() => dispatch(deleteElement(e.id))}
                     >
-                        <span>Remove</span>
+                        <div>Remove</div>
                     </Button> : null}
                 </Card>
                 )
