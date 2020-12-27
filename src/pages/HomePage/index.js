@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import axios from "axios"
-import { apiUrl } from "../../config/constants";
+import { apiUrl, DEFAULT_PAGINATION_LIMIT } from "../../config/constants";
 import { 
     Jumbotron, 
     Container, 
@@ -13,40 +13,59 @@ import { useDispatch, useSelector } from "react-redux"
 import { usersFetched } from "../../store/allUsers/actions"
 import { selectAllUsers } from "../../store/allUsers/selectors"
 import { selectUser } from "../../store/user/selectors"
+import {
+  startLoading,
+  fetchNext5Users
+} from "../../store/feed/actions";
 
 import "./index.scss"
+import { selectFeedLoading, selectFeedUsers } from "../../store/feed/selectors";
+import { Form } from "react-bootstrap";
  
 export default function HomePage() {
     const dispatch = useDispatch()
     const user = useSelector(selectUser)
     const allUsers = useSelector(selectAllUsers)
+    const feedUsers = useSelector(selectFeedUsers)
+    const loading = useSelector(selectFeedLoading)
+    const [ search, setSearch ] = useState("")
 
     useEffect(() => {
-        dispatch(fetchAllUsers);
+        dispatch(fetchNext5Users);
 
       }, [dispatch]);
 
-      async function fetchAllUsers() {
-          try {
-            const response = await axios.get(`${apiUrl}/user`);
-      
-            dispatch(usersFetched(response.data.users));
-          } catch (error) {
-            if (error.response) {
-              console.log(error.response.message);
-            } else {
-              console.log(error);
-            }
-          }
-        };
+      async function fetchNext5Users() {
+        dispatch(startLoading);
+        const userCount = feedUsers.length;
+        const response = await axios.get(
+          `${apiUrl}/user?limit=${DEFAULT_PAGINATION_LIMIT}&offset=${userCount}`
+        );
+    
+        const moreUsers = response.data.users;
+    
+        dispatch(usersFetched(moreUsers));
+      }
+
+      const filteredUsers = feedUsers.filter(user => {
+        return user.name.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+      })
     
     return (
     <>
         <Jumbotron className="hp-banner-text">
             <h1 className="title">Welcome back {user.name}</h1>
         </Jumbotron>
+        <Form as={Col} md={{ span: 6 }} className="search-bar">
+                <Form.Control
+                  value={search}
+                  onChange={event => setSearch(event.target.value)}
+                  type="text"
+                  placeholder="Search for a store"
+                />
+            </Form>
         <Container as={Col} md={{ span: 12 }}>
-                {allUsers.map(u => {
+                {filteredUsers.map(u => {
                     return (
                         <Card 
                         className="animated-button1"
@@ -71,6 +90,12 @@ export default function HomePage() {
                     )
                 })}
         </Container>
+        <Button className="load-more" onClick={fetchNext5Users}>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Load more</Button>
     </>
     )
 }

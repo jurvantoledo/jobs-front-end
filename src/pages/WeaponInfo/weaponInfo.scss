@@ -25,6 +25,10 @@
   margin: 0;
 }
 
+.element-card.card.col-md-3:hover {
+  box-shadow: none;
+}
+
 h1.weapon-info-title {
   text-shadow: 0px 0px 5px white;
   text-align: center;
