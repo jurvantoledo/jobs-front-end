@@ -25,9 +25,7 @@ export default function UserInfo() {
     const userInfo = useSelector(selectUserInfo)
     const [ search, setSearch ] = useState("")
 
-    const displayButton = user.id = userInfo.id
-
-    console.log("IS THIS USER PLEASE SAY YES",user)
+    const displayButton = user.id !== userInfo.id
 
     useEffect(() => {
         dispatch(fetchUserById(id));
@@ -35,7 +33,6 @@ export default function UserInfo() {
       }, [dispatch, id]);
 
       const onDelete = id => {
-        console.log("deleting element!", id);
         dispatch(deleteWeapon(id));
       };
 
