@@ -25,7 +25,7 @@ export default function UserInfo() {
     const userInfo = useSelector(selectUserInfo)
     const [ search, setSearch ] = useState("")
 
-    const displayButton = user.id !== userInfo.id
+    const displayButton = user.id === userInfo.id
 
     console.log("IS THIS USER PLEASE SAY YES",user)
 
