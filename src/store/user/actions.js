@@ -31,7 +31,7 @@ export const signUp = (name, email, password) => {
   return async (dispatch, getState) => {
     dispatch(appLoading());
     try {
-      const response = await axios.post(`${apiUrl}/signup`, {
+      const response = await axios.post(`${apiUrl}signup`, {
         name,
         email,
         password
@@ -90,7 +90,7 @@ export const getUserWithStoredToken = () => {
     try {
       // if we do have a token,
       // check wether it is still valid or if it is expired
-      const response = await axios.get(`${apiUrl}/me`, {
+      const response = await axios.get(`${apiUrl}me`, {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -126,7 +126,7 @@ export const addWeapon = (name, type, rarity) => {
     dispatch(appLoading());
     try {
       const response = await axios.post(
-        `${apiUrl}/user/${user.id}`, {
+        `${apiUrl}user/${user.id}`, {
           name, 
           type, 
           rarity

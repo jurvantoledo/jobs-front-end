@@ -32,7 +32,7 @@ const weaponFetched = weapon => ({
   
   export const fetchWeaponById = id => {
     return async (dispatch, getState) => {
-      const response = await axios.get(`${apiUrl}/weapon/${id}`);
+      const response = await axios.get(`${apiUrl}weapon/${id}`);
       console.log(response);
       dispatch(weaponFetched(response.data.weapon));
     };
@@ -45,7 +45,7 @@ const weaponFetched = weapon => ({
       dispatch(appLoading());
       try {
         const response = await axios.post(
-          `${apiUrl}/weapon/${id}`, {
+          `${apiUrl}weapon/${id}`, {
           name,
         });
   
@@ -71,7 +71,7 @@ const weaponFetched = weapon => ({
   
       if (token === null) return;
       try {
-        const response = await axios.delete(`${apiUrl}/element/${id}`, {
+        const response = await axios.delete(`${apiUrl}element/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         console.log("this is response", response);

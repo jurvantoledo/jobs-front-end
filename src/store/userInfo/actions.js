@@ -19,7 +19,7 @@ const userDetailsFetched = user => ({
   export const fetchUserById = id => {
     return async (dispatch, getState) => {
       const response = await axios.get(
-        `${apiUrl}/user/${id}`
+        `${apiUrl}user/${id}`
         );
       console.log(response);
       dispatch(userDetailsFetched(response.data.user));
@@ -32,7 +32,7 @@ const userDetailsFetched = user => ({
   
       if (token === null) return;
       try {
-        const response = await axios.delete(`${apiUrl}/weapon/${id}`, {
+        const response = await axios.delete(`${apiUrl}weapon/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         console.log("this is response", response);
