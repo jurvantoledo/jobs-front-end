@@ -61,7 +61,7 @@ export default function HomePage() {
                   value={search}
                   onChange={event => setSearch(event.target.value)}
                   type="text"
-                  placeholder="Search for a store"
+                  placeholder="Search for a user"
                 />
             </Form>
         <Container as={Col} md={{ span: 12 }}>

@@ -5,10 +5,16 @@ import { selectToken } from "../user/selectors";
 
 export const USER_DETAILS_FETCHED = "USER_DETAILS_FETCHED";
 export const WEAPON_DELETE_SUCCESS = "WEAPON_DELETE_SUCCESS"
+export const FILTER_WEAPONS = "FILTER_WEAPONS"
 
 const userDetailsFetched = user => ({
     type: USER_DETAILS_FETCHED,
     payload: user
+  });
+
+  export const filterWeapons = weapons => ({
+    type: FILTER_WEAPONS,
+    weapons
   });
 
   export const weaponDeleteSuccess = userId => ({

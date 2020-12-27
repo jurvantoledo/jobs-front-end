@@ -5,7 +5,8 @@ import {
     Container,
     Card,
     Col, 
-    Button
+    Button,
+    Form
 } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
@@ -23,10 +24,9 @@ export default function UserInfo() {
     const dispatch = useDispatch()
     const userInfo = useSelector(selectUserInfo)
     const weapon = useSelector(selectWeapons)
+    const [ search, setSearch ] = useState("")
 
     const displayButton = user.id === weapon.userId
-
-
 
     useEffect(() => {
         dispatch(fetchUserById(id));
@@ -50,6 +50,14 @@ export default function UserInfo() {
                 )
             })}
         </Jumbotron>
+        <Form as={Col} md={{ span: 6 }} className="search-bar">
+                <Form.Control
+                  value={search}
+                  onChange={event => setSearch(event.target.value)}
+                  type="text"
+                  placeholder="Search for a store"
+                />
+            </Form>
         {displayButton ? <Link className="animated-button2" to={`/add-weapon/${id}`}>
            <span></span>
            <span></span>
@@ -66,7 +74,7 @@ export default function UserInfo() {
                     md={{ span: 12 }} 
                     className="info-weapon-container"
                     >
-                        {uInfo.weapons.map(weapon => {
+                        {uInfo.weapons.filter(weapons => weapons.name.toLowerCase().indexOf(search.toLowerCase()) !== -1).map(weapon => {
                             return (
                              <Card
                                 key={weapon.id}
@@ -81,9 +89,9 @@ export default function UserInfo() {
                             id="remove"
                             className="remove-button" 
                             data-text="Remove"
-                                  onClick={() => dispatch(deleteWeapon(weapon.id))}
+                            onClick={() => dispatch(deleteWeapon(weapon.id))}
                             >
-                                       <span>Remove</span>
+                             <span>Remove</span>
                             </Button> : null}
                                 <div className="weapon-info-name">
                                     <h2 className="info-weapon-name-header">{weapon.name}</h2>

@@ -1,5 +1,6 @@
 import { 
     USER_DETAILS_FETCHED,
+    FILTER_WEAPONS
   } from "./actions";
   
   const initialState = []
@@ -14,6 +15,12 @@ import {
           ...state, 
           {...payload}
         ];
+
+      case FILTER_WEAPONS:
+      return {
+        ...state,
+        weapons: payload.weapons
+      };
   
       default:
         return state;
