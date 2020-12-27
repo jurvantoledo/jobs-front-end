@@ -23,14 +23,12 @@ export default function UserInfo() {
     const user = useSelector(selectUser)
     const dispatch = useDispatch()
     const userInfo = useSelector(selectUserInfo)
-    const weapon = useSelector(selectWeapons)
     const [ search, setSearch ] = useState("")
 
-    const displayButton = user.id === weapon.userId
+    const displayButton = user.id === userInfo.id
 
     useEffect(() => {
         dispatch(fetchUserById(id));
-        dispatch(fetchWeaponById(id));
 
       }, [dispatch, id]);
 
