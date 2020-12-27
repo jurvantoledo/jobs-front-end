@@ -64,6 +64,8 @@ export default function AddWeapon() {
          {label: "#FFA500", value: "#FFA500"},
          {label: "#FF1493", value: "#FF1493"},
          {label: "#00FFFF", value: "#00FFFF"},
+         {label: "#F4C2C2", value: "#F4C2C2"},
+         {label: "#b07822", value: "#b07822"}
         ]
       });
     }
@@ -112,12 +114,14 @@ export default function AddWeapon() {
             >
             <option value={null}>Select a weapon rarity</option>
             <option value="#ffffff" id="rarity-dropdown">White</option>
-            <option value="#27d827" id="rarity-dropdown">Green</option>
-            <option value="#1919ff" id="rarity-dropdown">Blue</option>
-            <option value="#800080" id="rarity-dropdown">Purple</option>
-            <option value="#FFA500" id="rarity-dropdown">Orange</option>
-            <option value="#FF1493" id="rarity-dropdown">Pink</option>
-            <option value="#00FFFF" id="rarity-dropdown">Cyan</option>  
+            <option value="#27d827" id="rarity-dropdown">Uncommon</option>
+            <option value="#1919ff" id="rarity-dropdown">Rare</option>
+            <option value="#800080" id="rarity-dropdown">Very rare</option>
+            <option value="#FF1493" id="rarity-dropdown">E-Tech</option>
+            <option value="#FFA500" id="rarity-dropdown">Legendary</option>
+            <option value="#F4C2C2" id="rarity-dropdown">Seraph</option>
+            <option value="#00FFFF" id="rarity-dropdown">Pearlescent</option>
+            <option value="#b07822" id="rarity-dropdown">Effervescent</option>    
             </Form.Control>
         </Form.Group>
         <Form.Group className="mt-5">

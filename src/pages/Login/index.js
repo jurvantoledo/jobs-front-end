@@ -24,7 +24,7 @@ export default function SignUp() {
     if (token === null) {
       history.push(`/login`);
     }
-  }, [token, history]);
+  }, [token, history, id]);
 
   function submitForm(event) {
     console.log("hi");

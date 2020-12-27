@@ -55,7 +55,7 @@ export default function UserInfo() {
                   value={search}
                   onChange={event => setSearch(event.target.value)}
                   type="text"
-                  placeholder="Search for a store"
+                  placeholder="Search for a weapon"
                 />
             </Form>
         {displayButton ? <Link className="animated-button2" to={`/add-weapon/${id}`}>

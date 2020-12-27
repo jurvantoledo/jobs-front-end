@@ -2,7 +2,6 @@ import {
   LOG_OUT, 
   LOGIN_SUCCESS, 
   TOKEN_STILL_VALID, 
-  USER_DETAILS_FETCHED,
   WEAPON_POST_SUCCESS
 } from "./actions";
 

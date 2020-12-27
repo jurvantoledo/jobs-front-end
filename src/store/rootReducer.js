@@ -9,7 +9,6 @@ import feed from "./feed/reducer"
 export default combineReducers({
   appState,
   user,
-  allUsers,
   userInfo,
   weapon,
   feed

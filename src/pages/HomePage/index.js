@@ -8,30 +8,32 @@ import {
     Button,
     Col
  } from "react-bootstrap"
- import { Link } from "react-router-dom";
+ import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux"
 import { usersFetched } from "../../store/allUsers/actions"
-import { selectAllUsers } from "../../store/allUsers/selectors"
 import { selectUser } from "../../store/user/selectors"
 import {
   startLoading,
-  fetchNext5Users
 } from "../../store/feed/actions";
 
 import "./index.scss"
-import { selectFeedLoading, selectFeedUsers } from "../../store/feed/selectors";
+import { selectFeedUsers } from "../../store/feed/selectors";
 import { Form } from "react-bootstrap";
  
 export default function HomePage() {
     const dispatch = useDispatch()
     const user = useSelector(selectUser)
-    const allUsers = useSelector(selectAllUsers)
     const feedUsers = useSelector(selectFeedUsers)
-    const loading = useSelector(selectFeedLoading)
     const [ search, setSearch ] = useState("")
+    const token = useSelector(selectUser)
+    const history = useHistory()
 
     useEffect(() => {
         dispatch(fetchNext5Users);
+
+        if (token === null) {
+          history.push(`/login`);
+        }
 
       }, [dispatch]);
 
