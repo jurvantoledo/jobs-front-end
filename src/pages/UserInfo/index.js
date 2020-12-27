@@ -97,7 +97,7 @@ export default function UserInfo() {
                                     <h2 className="info-weapon-name-header">{weapon.name}</h2>
                                     <p className="info-weapon-name">{weapon.type}</p>
                                 </div>
-                                <Link to={`/weapon-info/${weapon.id}`} className="animated-button1">
+                                <Link to={`weapon-info/${weapon.id}`} className="animated-button1">
                                     <span></span>
                                     <span></span>
                                     <span></span>
