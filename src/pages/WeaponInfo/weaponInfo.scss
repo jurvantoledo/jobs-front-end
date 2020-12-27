@@ -70,7 +70,6 @@ button.element-remove-button.btn.btn-primary {
 
 button.element-remove-button.btn.btn-primary:hover {
   box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.5);
-  width: 100%;
   position: relative;
   padding: 20px 50px;
 }
@@ -251,4 +250,35 @@ button.element-remove-button.btn.btn-primary::after {
     -webkit-transform: translateY(100%);
     transform: translateY(100%);
   }
+}
+
+/*+++++++++COUNT BAR+++++++++*/
+.count-bar {
+  text-align: center;
+  color: #fff;
+  text-shadow: 0px 0px 5px white;
+}
+
+button.increment-btn.btn.btn-primary {
+  margin: 0 15px;
+  text-shadow: 0px 0px 5px white;
+  background: linear-gradient(-30deg, #3d0b0b 50%, #2b0808 50%);
+  border: none;
+}
+
+button.decrement-btn.btn.btn-primary {
+  margin: 0 15px;
+  text-shadow: 0px 0px 5px white;
+  background: linear-gradient(-30deg, #3d0b0b 50%, #2b0808 50%);
+  border: none;
+}
+
+.count-reset-col {
+  margin-top: 15px;
+}
+
+button.count-reset-btn.btn.btn-primary {
+  background: linear-gradient(-30deg, #3d0b0b 50%, #2b0808 50%);
+  border: none;
+  text-shadow: 0px 0px 5px white;
 }

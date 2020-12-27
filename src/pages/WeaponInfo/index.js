@@ -22,6 +22,7 @@ export default function WeaponInfo() {
     const dispatch = useDispatch()
     const weapon = useSelector(selectWeapons)
     const [editForm, setEditForm] = useState(false);
+    const [ count, setCount ] = useState(0)
     
     const displayButton = user.id === weapon.userId
 
@@ -34,6 +35,18 @@ export default function WeaponInfo() {
         console.log("deleting element!", id);
         dispatch(deleteElement(id));
       };
+
+      const handleIncrement = () => {
+        setCount(prevCount => prevCount + 1)
+      }
+
+      const handleDecrement = () => {
+        setCount(prevCount => prevCount - 1)
+      }
+
+      if(count === -1) {
+        setCount(0)      
+      }
 
     return (
     <>
@@ -73,6 +86,26 @@ export default function WeaponInfo() {
             >
                 {weapon.name}
             </h1>
+          <div className="count-bar">
+            <h2>founded {count}</h2>
+            <Button 
+              className="increment-btn" 
+              onClick={handleIncrement}>
+              +
+            </Button>
+            <Button 
+              className="decrement-btn" 
+              onClick={handleDecrement}>
+              -
+            </Button>
+            <div className="count-reset-col">
+              <Button 
+                className="count-reset-btn" 
+                onClick={() => setCount(0)}>
+                Reset
+              </Button>
+            </div>
+           </div>
         <Container className="element-container">
             {weapon.elements?.map(e => {
                 return (
