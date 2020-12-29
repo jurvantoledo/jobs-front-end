@@ -87,7 +87,7 @@ export default function WeaponInfo() {
                 {weapon.name}
             </h1>
           <div className="count-bar">
-            <h2>Tries {count}</h2>
+            <h2 className="try-counter-title">Tries {count}</h2>
             <Button 
               className="increment-btn" 
               onClick={handleIncrement}>
