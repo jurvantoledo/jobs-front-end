@@ -41,16 +41,16 @@ export default function UserInfo() {
                 return (
                 <Container key={uInfo.id} className="userInfo-header">
                     <h1 className="title">Welcome to your arsenal {uInfo.name}</h1>
-                </Container>
-                )
-            })}
-            {user.id === uInfo.id ? <Link className="animated-button2" to={`/add-weapon/${id}`}>
+                    {user.id === uInfo.id ? <Link className="animated-button2" to={`/add-weapon/${id}`}>
            <span></span>
            <span></span>
            <span></span>
            <span></span>
            Add A Weapon
         </Link> : null}
+                </Container>
+                )
+            })}
         </Jumbotron>
         <Form as={Col} md={{ span: 6 }} className="search-bar">
                 <Form.Control
