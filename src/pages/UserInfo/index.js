@@ -25,7 +25,11 @@ export default function UserInfo() {
     const userInfo = useSelector(selectUserInfo)
     const [ search, setSearch ] = useState("")
 
-    const displayButton = user.id === userInfo.map(uInfo => {uInfo.id})
+    const displayButton = user.id === userInfo.map(uInfo => {
+        return (
+            uInfo.id
+        )
+    })
 
     useEffect(() => {
         dispatch(fetchUserById(id));
