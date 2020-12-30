@@ -42,12 +42,12 @@ export default function UserInfo() {
                 <Container key={uInfo.id} className="userInfo-header">
                     <h1 className="title">Welcome to your arsenal {uInfo.name}</h1>
                     {user.id === uInfo.id ? <Link className="animated-button2" to={`/add-weapon/${id}`}>
-           <span></span>
-           <span></span>
-           <span></span>
-           <span></span>
-           Add A Weapon
-        </Link> : null}
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                     Add A Weapon
+                    </Link> : null}
                 </Container>
                 )
             })}
