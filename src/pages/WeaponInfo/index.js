@@ -86,7 +86,7 @@ export default function WeaponInfo() {
             >
                 {weapon.name}
             </h1>
-          <div className="count-bar">
+            { displayButton ? <div className="count-bar">
             <h2 className="try-counter-title">Tries {count}</h2>
             <Button 
               className="increment-btn" 
@@ -105,7 +105,7 @@ export default function WeaponInfo() {
                 Reset
               </Button>
             </div>
-           </div>
+           </div> : null}
         <Container className="element-container">
             {weapon.elements?.map(e => {
                 return (
