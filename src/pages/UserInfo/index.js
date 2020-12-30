@@ -25,12 +25,6 @@ export default function UserInfo() {
     const userInfo = useSelector(selectUserInfo)
     const [ search, setSearch ] = useState("")
 
-    const displayButton = user.id === userInfo.map(uInfo => {
-        return (
-            uInfo.id
-        )
-    })
-
     useEffect(() => {
         dispatch(fetchUserById(id));
 
@@ -50,6 +44,13 @@ export default function UserInfo() {
                 </Container>
                 )
             })}
+            {user.id === uInfo.id ? <Link className="animated-button2" to={`/add-weapon/${id}`}>
+           <span></span>
+           <span></span>
+           <span></span>
+           <span></span>
+           Add A Weapon
+        </Link> : null}
         </Jumbotron>
         <Form as={Col} md={{ span: 6 }} className="search-bar">
                 <Form.Control
@@ -59,13 +60,6 @@ export default function UserInfo() {
                   placeholder="Search for a weapon"
                 />
             </Form>
-        {displayButton ? <Link className="animated-button2" to={`/add-weapon/${id}`}>
-           <span></span>
-           <span></span>
-           <span></span>
-           <span></span>
-           Add A Weapon
-        </Link> : null}
         <Container as={Col} md={{ span: 12 }} className="userInfo-body">
             {userInfo.map(uInfo => {
                 return (
@@ -85,7 +79,7 @@ export default function UserInfo() {
                                 style={{ backgroundImage: `url(https://www.wallpaperup.com/uploads/wallpapers/2014/01/22/234882/8507fe0a3d30363c8712c0b93e14db41.jpg)`, 
                                          border: `2px solid ${weapon.rarity}`}}
                             >
-                            { displayButton ? 
+                            { user.id === uInfo.id ? 
                             <Button
                             id="remove"
                             className="remove-button" 
