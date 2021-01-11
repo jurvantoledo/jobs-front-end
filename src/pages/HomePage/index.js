@@ -12,13 +12,11 @@ import {
 import { useDispatch, useSelector } from "react-redux"
 import { usersFetched } from "../../store/allUsers/actions"
 import { selectUser } from "../../store/user/selectors"
-import {
-  startLoading,
-} from "../../store/feed/actions";
 
 import "./index.scss"
 import { selectFeedUsers } from "../../store/feed/selectors";
 import { Form } from "react-bootstrap";
+import { appDoneLoading, appLoading } from "../../store/appState/actions";
  
 export default function HomePage() {
     const dispatch = useDispatch()
@@ -38,7 +36,7 @@ export default function HomePage() {
       }, [dispatch]);
 
       async function fetchNext5Users() {
-        dispatch(startLoading);
+        dispatch(appLoading());
         const userCount = feedUsers.length;
         const response = await axios.get(
           `${apiUrl}user?limit=${DEFAULT_PAGINATION_LIMIT}&offset=${userCount}`
@@ -47,6 +45,7 @@ export default function HomePage() {
         const moreUsers = response.data.users;
     
         dispatch(usersFetched(moreUsers));
+        dispatch(appDoneLoading())
       }
 
       const filteredUsers = feedUsers.filter(user => {
