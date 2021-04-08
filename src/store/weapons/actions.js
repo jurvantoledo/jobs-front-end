@@ -45,7 +45,7 @@ const weaponFetched = weapon => ({
       dispatch(appLoading());
       try {
         const response = await axios.post(
-          `${apiUrl}weapon/${id}`, {
+          `${apiUrl}/weapon/${id}`, {
           name,
         });
   

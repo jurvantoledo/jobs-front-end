@@ -126,7 +126,7 @@ export const addWeapon = (name, type, rarity) => {
     dispatch(appLoading());
     try {
       const response = await axios.post(
-        `${apiUrl}user/${user.id}`, {
+        `${apiUrl}/user/${user.id}`, {
           name, 
           type, 
           rarity
