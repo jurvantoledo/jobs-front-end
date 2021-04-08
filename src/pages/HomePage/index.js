@@ -39,7 +39,7 @@ export default function HomePage() {
         dispatch(appLoading());
         const userCount = feedUsers.length;
         const response = await axios.get(
-          `${apiUrl}/user?limit=${DEFAULT_PAGINATION_LIMIT}&offset=${userCount}`
+          `${apiUrl}user?limit=${DEFAULT_PAGINATION_LIMIT}&offset=${userCount}`
         );
     
         const moreUsers = response.data.users;
